@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import type { Node } from 'react'
 import {
@@ -8,12 +9,21 @@ import {
   Text,
   useColorScheme,
   View,
-  Button
+  Button,
 } from 'react-native'
-import {theme} from '../theme/styles'
+import { theme } from '../theme/styles'
+import CustomButton from '../components/CustomButton'
+type Props = {
+  navigation: Object,
+}
 
-const Section = ({ children, title }): Node => {
-  const isDarkMode = useColorScheme() === 'dark'  
+type SectionProps = {
+  title: string,
+  children: Node,
+}
+
+const Section = ({ children, title }: SectionProps): Node => {
+  const isDarkMode = useColorScheme() === 'dark'
   const mappedTheme = isDarkMode ? theme.dark : theme.light
 
   return (
@@ -41,68 +51,66 @@ const Section = ({ children, title }): Node => {
     </View>
   )
 }
-const HomeScreen = ({navigation}): Node => {
-   const isDarkMode = useColorScheme() === 'dark'
-  const mappedTheme = isDarkMode ? theme.dark : theme.light  
-  
+
+const HomeScreen = ({ navigation }: Props): Node => {
+  const isDarkMode = useColorScheme() === 'dark'
+  const mappedTheme = isDarkMode ? theme.dark : theme.light
 
   const backgroundStyle = {
     backgroundColor: mappedTheme.backgroundColor,
   }
-  const scrollSectionStyles = {...styles.scrollSection, ...backgroundStyle}  
+  const scrollSectionStyles = { ...styles.scrollSection, ...backgroundStyle }
+
+  console.log('HomeScreen.js:', navigation)
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={backgroundStyle}>     
-          <Button
-            title="Go to Details"
-            onPress={() => navigation.navigate('Details')}
-          />
-     
-        <Section title="HERO">
+      <View style={backgroundStyle}>
+        <CustomButton
+          title="Go to Details"
+          onPress={() => navigation.navigate('Details')}
+        />
+
+        <Section title="Header">
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat. Duis aute irure dolor in
           </Text>
-     
         </Section>
-      </View> 
+      </View>
       <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
+        contentInsetAdjustmentBehavior="scrollableAxes"
         style={scrollSectionStyles}
       >
-        
-          <Section title="Step 1">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="Step 2">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="Step 3">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="Step 4">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-        
+        <Section title="Step 1">
+          Edit <Text style={styles.highlight}>App.js</Text> to change this
+          screen and then come back to see your edits.
+        </Section>
+        <Section title="Step 2">
+          Edit <Text style={styles.highlight}>App.js</Text> to change this
+          screen and then come back to see your edits.
+        </Section>
+        <Section title="Step 3">
+          Edit <Text style={styles.highlight}>App.js</Text> to change this
+          screen and then come back to see your edits.
+        </Section>
+        <Section title="Step 4">
+          Edit <Text style={styles.highlight}>App.js</Text> to change this
+          screen and then come back to see your edits.
+        </Section>
       </ScrollView>
-      </SafeAreaView>
+    </SafeAreaView>
   )
 }
 
-
 const styles = StyleSheet.create({
-  scrollSection:{        
+  scrollSection: {
     minHeight: '100%',
     backgroundColor: '#777',
-  },  
-  sectionContainer: {    
+  },
+  sectionContainer: {
     marginTop: 18,
     paddingHorizontal: 24,
     paddingVertical: 10,
@@ -114,12 +122,15 @@ const styles = StyleSheet.create({
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
-    fontWeight: '400',    
+    fontWeight: '400',
   },
   highlight: {
     fontWeight: '700',
   },
-  
+  button: {
+    marginTop: 20,
+    backgroundColor: '#fff',
+  },
 })
 
 export default HomeScreen
