@@ -23,7 +23,8 @@ type Props = {
 
 const CustomButton = ({ title, onPress }: Props) => {
   const isDarkMode = useColorScheme() === 'dark'
-  const mappedTheme = !isDarkMode ? theme.dark : theme.light
+  console.log('CustomButton::isDarkMode', isDarkMode)
+  const mappedTheme = isDarkMode ? theme.dark : theme.light
   // const dimensions = useDimensions()
 
   const sty = {

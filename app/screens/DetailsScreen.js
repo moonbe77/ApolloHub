@@ -8,6 +8,7 @@ import CustomButton from '../components/CustomButton'
 import HomeDetails from '../containers/HomeDetails'
 import MapDetails from '../containers/MapDetails'
 import ContactDetails from '../containers/ContactDetails'
+import ImageView from '../containers/ImageView'
 
 type Props = {
   navigation: Object,
@@ -66,6 +67,7 @@ const DetailsScreen = ({ navigation }: Props): Node => {
           },
         }}
       />
+      <Stack.Screen name="imageView" component={ImageView} />
     </Stack.Navigator>
   )
 }

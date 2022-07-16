@@ -18,9 +18,11 @@ import {
   useColorScheme,
   View,
 } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { navigationRef } from './RootNavigation'
+
 import { init as notificationsInit } from './services/notifications'
 import { Notifications } from 'react-native-notifications'
-import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from './screens/HomeScreen'
@@ -43,7 +45,7 @@ const App: () => Node = () => {
 
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
