@@ -4,7 +4,7 @@ import type { Node } from 'react'
 import { StyleSheet, Text, useColorScheme, View } from 'react-native'
 import { theme } from '../theme/styles.js'
 import CustomButton from '../components/CustomButton'
-
+import { Notifications } from 'react-native-notifications'
 type Props = {
   navigation: Object,
 }
@@ -15,6 +15,12 @@ const HomeDetails = ({ navigation }: Props): Node => {
 
   const backgroundStyle = {
     backgroundColor: mappedTheme.backgroundColor,
+  }
+  const handleNotification = () => {
+    Notifications.postLocalNotification({
+      body: 'Local notification!',
+      title: 'Local Notification Title',
+    })
   }
 
   return (
@@ -33,6 +39,7 @@ const HomeDetails = ({ navigation }: Props): Node => {
         title="Contact"
         onPress={() => navigation.navigate('ContactDetails')}
       />
+      <CustomButton title="Notification" onPress={handleNotification} />
     </View>
   )
 }

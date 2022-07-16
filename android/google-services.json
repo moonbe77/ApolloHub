@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "920300323028",
+    "project_id": "apollohub-syd",
+    "storage_bucket": "apollohub-syd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920300323028:android:43666bd39c3a588a8f3b41",
+        "android_client_info": {
+          "package_name": "com.apollohub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920300323028-chck96slj8ch18hot58b3l7hr4qrfqet.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apollohub",
+            "certificate_hash": "fd34472d1d60f9e07dbdee4dab2eb01711a6509a"
+          }
+        },
+        {
+          "client_id": "920300323028-tkbaaqb4phesk09ehqq6cdkg22drbua2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_LMZr8Hcjng8laKDwP4pGRwzOXR_fTh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920300323028-tkbaaqb4phesk09ehqq6cdkg22drbua2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
