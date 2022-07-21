@@ -17,6 +17,7 @@ const HomeDetails = ({ navigation }: Props): Node => {
     backgroundColor: mappedTheme.backgroundColor,
   }
   const handleNotification = () => {
+    console.log('handleNotification')
     Notifications.postLocalNotification({
       body: 'Local notification!',
       title: 'Local Notification Title',
@@ -40,6 +41,10 @@ const HomeDetails = ({ navigation }: Props): Node => {
         onPress={() => navigation.navigate('ContactDetails')}
       />
       <CustomButton title="Notification" onPress={handleNotification} />
+      <CustomButton
+        title="Geo"
+        onPress={() => navigation.navigate('geolocationContainer')}
+      />
     </View>
   )
 }

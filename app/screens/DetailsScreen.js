@@ -9,6 +9,7 @@ import HomeDetails from '../containers/HomeDetails'
 import MapDetails from '../containers/MapDetails'
 import ContactDetails from '../containers/ContactDetails'
 import ImageView from '../containers/ImageView'
+import { GeolocationContainer } from '../containers/Geolocation'
 
 type Props = {
   navigation: Object,
@@ -68,6 +69,20 @@ const DetailsScreen = ({ navigation }: Props): Node => {
         }}
       />
       <Stack.Screen name="imageView" component={ImageView} />
+      <Stack.Screen
+        name="geolocationContainer"
+        component={GeolocationContainer}
+        options={{
+          title: 'Geolocation',
+          headerStyle: {
+            backgroundColor: mappedTheme.backgroundColor,
+          },
+          headerTintColor: mappedTheme.textColor,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
     </Stack.Navigator>
   )
 }

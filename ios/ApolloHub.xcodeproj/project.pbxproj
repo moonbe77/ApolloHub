@@ -12,8 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A1794DE1C83DA7976EEFBF50 /* libPods-ApolloHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A1B7320467CA64BE302498 /* libPods-ApolloHub.a */; };
-		EAEC9FE988CD40BAD4D84558 /* libPods-ApolloHub-ApolloHubTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD77DB8634B34C6EF1134138 /* libPods-ApolloHub-ApolloHubTests.a */; };
+		DE20609228894D360070F3E0 /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE20609128894D360070F3E0 /* RNBackgroundFetch+AppDelegate.m */; };
+		E40900A5344246A709E2A67C /* libPods-ApolloHub-ApolloHubTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7284A4D43F0974F3DF00D1 /* libPods-ApolloHub-ApolloHubTests.a */; };
+		F428005D4D7475B40DD7F904 /* libPods-ApolloHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D517CBA87568332E1E5F5667 /* libPods-ApolloHub.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +37,15 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ApolloHub/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ApolloHub/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ApolloHub/main.m; sourceTree = "<group>"; };
-		81A1B7320467CA64BE302498 /* libPods-ApolloHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApolloHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		166DEA0810083000E6D7BF59 /* Pods-ApolloHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub.debug.xcconfig"; path = "Target Support Files/Pods-ApolloHub/Pods-ApolloHub.debug.xcconfig"; sourceTree = "<group>"; };
+		4D038EAE8331A7D410DE7318 /* Pods-ApolloHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub.release.xcconfig"; path = "Target Support Files/Pods-ApolloHub/Pods-ApolloHub.release.xcconfig"; sourceTree = "<group>"; };
+		5ACCEFB43597628FEF06DC10 /* Pods-ApolloHub-ApolloHubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub-ApolloHubTests.release.xcconfig"; path = "Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests.release.xcconfig"; sourceTree = "<group>"; };
+		652F6AA46331207840C6F4C1 /* Pods-ApolloHub-ApolloHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub-ApolloHubTests.debug.xcconfig"; path = "Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ApolloHub/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8A394B6B2253A6712F00941E /* Pods-ApolloHub-ApolloHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub-ApolloHubTests.debug.xcconfig"; path = "Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests.debug.xcconfig"; sourceTree = "<group>"; };
-		932D8F51864A5E3972BF405B /* Pods-ApolloHub-ApolloHubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub-ApolloHubTests.release.xcconfig"; path = "Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests.release.xcconfig"; sourceTree = "<group>"; };
-		CD77DB8634B34C6EF1134138 /* libPods-ApolloHub-ApolloHubTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApolloHub-ApolloHubTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB76B0229ED264EA7DE5F313 /* Pods-ApolloHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub.debug.xcconfig"; path = "Target Support Files/Pods-ApolloHub/Pods-ApolloHub.debug.xcconfig"; sourceTree = "<group>"; };
+		D517CBA87568332E1E5F5667 /* libPods-ApolloHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApolloHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE20609128894D360070F3E0 /* RNBackgroundFetch+AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RNBackgroundFetch+AppDelegate.m"; path = "../node_modules/react-native-background-fetch/ios/RNBackgroundFetch/RNBackgroundFetch+AppDelegate.m"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FF9F43D76A00C4C1D0F95D72 /* Pods-ApolloHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApolloHub.release.xcconfig"; path = "Target Support Files/Pods-ApolloHub/Pods-ApolloHub.release.xcconfig"; sourceTree = "<group>"; };
+		EF7284A4D43F0974F3DF00D1 /* libPods-ApolloHub-ApolloHubTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApolloHub-ApolloHubTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAEC9FE988CD40BAD4D84558 /* libPods-ApolloHub-ApolloHubTests.a in Frameworks */,
+				E40900A5344246A709E2A67C /* libPods-ApolloHub-ApolloHubTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1794DE1C83DA7976EEFBF50 /* libPods-ApolloHub.a in Frameworks */,
+				F428005D4D7475B40DD7F904 /* libPods-ApolloHub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,7 @@
 		13B07FAE1A68108700A75B9A /* ApolloHub */ = {
 			isa = PBXGroup;
 			children = (
+				DE20609128894D360070F3E0 /* RNBackgroundFetch+AppDelegate.m */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -99,10 +102,10 @@
 		20AE25902C23A83D33DD71A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DB76B0229ED264EA7DE5F313 /* Pods-ApolloHub.debug.xcconfig */,
-				FF9F43D76A00C4C1D0F95D72 /* Pods-ApolloHub.release.xcconfig */,
-				8A394B6B2253A6712F00941E /* Pods-ApolloHub-ApolloHubTests.debug.xcconfig */,
-				932D8F51864A5E3972BF405B /* Pods-ApolloHub-ApolloHubTests.release.xcconfig */,
+				166DEA0810083000E6D7BF59 /* Pods-ApolloHub.debug.xcconfig */,
+				4D038EAE8331A7D410DE7318 /* Pods-ApolloHub.release.xcconfig */,
+				652F6AA46331207840C6F4C1 /* Pods-ApolloHub-ApolloHubTests.debug.xcconfig */,
+				5ACCEFB43597628FEF06DC10 /* Pods-ApolloHub-ApolloHubTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				81A1B7320467CA64BE302498 /* libPods-ApolloHub.a */,
-				CD77DB8634B34C6EF1134138 /* libPods-ApolloHub-ApolloHubTests.a */,
+				D517CBA87568332E1E5F5667 /* libPods-ApolloHub.a */,
+				EF7284A4D43F0974F3DF00D1 /* libPods-ApolloHub-ApolloHubTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,12 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ApolloHubTests" */;
 			buildPhases = (
-				77DA186FF5D68DB695A62634 /* [CP] Check Pods Manifest.lock */,
+				57AAEEE25C00833A5B267ED5 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				DEBA68D81523BA7F71E255B0 /* [CP] Embed Pods Frameworks */,
-				735D4AFB87E784A061C75241 /* [CP] Copy Pods Resources */,
+				60645588A631AB89889E8A81 /* [CP] Embed Pods Frameworks */,
+				6DFB6359CC115EB9331F6F6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,14 +179,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ApolloHub" */;
 			buildPhases = (
-				FE0E4F6A6B605FFE2FDF3947 /* [CP] Check Pods Manifest.lock */,
+				ECB9996807896EE39B95B5FB /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				2FBC0EDB9729095F141F0BC3 /* [CP] Embed Pods Frameworks */,
-				075910AA584FF9831DA4EE01 /* [CP] Copy Pods Resources */,
+				877C07F3950958F327D10ABD /* [CP] Embed Pods Frameworks */,
+				D224080C6CB1040238D7465F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,58 +267,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		075910AA584FF9831DA4EE01 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2FBC0EDB9729095F141F0BC3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		735D4AFB87E784A061C75241 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		77DA186FF5D68DB695A62634 /* [CP] Check Pods Manifest.lock */ = {
+		57AAEEE25C00833A5B267ED5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,7 +289,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DEBA68D81523BA7F71E255B0 /* [CP] Embed Pods Frameworks */ = {
+		60645588A631AB89889E8A81 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,26 +306,58 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD10A7F022414F080027D42C /* Start Packager */ = {
+		6DFB6359CC115EB9331F6F6C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
-			name = "Start Packager";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApolloHub-ApolloHubTests/Pods-ApolloHub-ApolloHubTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE0E4F6A6B605FFE2FDF3947 /* [CP] Check Pods Manifest.lock */ = {
+		877C07F3950958F327D10ABD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D224080C6CB1040238D7465F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApolloHub/Pods-ApolloHub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECB9996807896EE39B95B5FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,6 +379,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -410,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE20609228894D360070F3E0 /* RNBackgroundFetch+AppDelegate.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -428,7 +432,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A394B6B2253A6712F00941E /* Pods-ApolloHub-ApolloHubTests.debug.xcconfig */;
+			baseConfigurationReference = 652F6AA46331207840C6F4C1 /* Pods-ApolloHub-ApolloHubTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,7 +460,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932D8F51864A5E3972BF405B /* Pods-ApolloHub-ApolloHubTests.release.xcconfig */;
+			baseConfigurationReference = 5ACCEFB43597628FEF06DC10 /* Pods-ApolloHub-ApolloHubTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -481,7 +485,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB76B0229ED264EA7DE5F313 /* Pods-ApolloHub.debug.xcconfig */;
+			baseConfigurationReference = 166DEA0810083000E6D7BF59 /* Pods-ApolloHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -508,7 +512,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF9F43D76A00C4C1D0F95D72 /* Pods-ApolloHub.release.xcconfig */;
+			baseConfigurationReference = 4D038EAE8331A7D410DE7318 /* Pods-ApolloHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
