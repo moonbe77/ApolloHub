@@ -1,21 +1,58 @@
 // @flow
-import React from 'react'
+import React, { useEffect } from 'react'
 import type { Node } from 'react'
 import { StyleSheet, Text, useColorScheme, View } from 'react-native'
 import { theme } from '../../theme/styles.js'
 import MapView, { Marker, Circle } from 'react-native-maps'
-
+import BackgroundGeolocation from 'react-native-background-geolocation'
 type Props = {
   navigation: Object,
 }
 
-export const MapWrapper = ({ coords, footprint }: Props): Node => {
+export const MapWrapper = ({
+  geoReady,
+  geoEnabled,
+  isLogging,
+  coords,
+  footprint,
+  handleStart,
+  handleStop,
+}: Props): Node => {
   const [follow, setFollow] = React.useState(true)
+  const [speed, setSpeed] = React.useState(null)
+
+  useEffect(() => {
+    BackgroundGeolocation.watchPosition(
+      location => {
+        // console.log('[watchPosition] -', location)
+        setSpeed(parseFloat(location.coords.speed * 1.609344).toFixed(2))
+      },
+      errorCode => {
+        console.log('[watchPosition] ERROR -', errorCode)
+      },
+      {
+        interval: 5000,
+        desiredAccuracy: BackgroundGeolocation.DESIRED_ACCURACY_HIGH,
+        persist: false,
+        extras: { foo: 'bar' },
+        timeout: 60000,
+      },
+    )
+  }, [])
+
   return (
     <View style={[styles.wrapper]}>
       <View style={styles.options}>
-        <Text onPress={() => setFollow(!follow)}> Start </Text>
-        <Text onPress={() => setFollow(!follow)}> Stop </Text>
+        {geoReady && (
+          <>
+            {geoEnabled ? (
+              <Text onPress={handleStop}>Stop</Text>
+            ) : (
+              <Text onPress={handleStart}>Start</Text>
+            )}
+          </>
+        )}
+        <Text> {speed ?? ''} km/h</Text>
         <Text onPress={() => setFollow(!follow)}> Follow </Text>
       </View>
       <View style={styles.mapContainer}>
@@ -106,7 +143,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: 'rgba(100,100,90,0.5)',
+    backgroundColor: 'rgba(100,100,90,0.8)',
     padding: 10,
     zIndex: 1,
   },

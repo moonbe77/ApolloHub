@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, AppState } from 'react-native'
 import BackgroundGeolocation, {
   Location,
   Subscription,
@@ -10,8 +10,9 @@ export const GeolocationContainer = () => {
   const [subscription, setSubscription] = React.useState([])
   const [location, setLocation] = React.useState({})
   const [error, setError] = React.useState('')
-  const [isLoading, setIsLoading] = React.useState(false)
+  const [isLogging, setIsLogging] = React.useState(false)
   const [geoReady, setGeoReady] = React.useState(false)
+  const [geoEnabled, setGeoEnabled] = React.useState(false)
   const [footprint, setFootprint] = React.useState([])
 
   useEffect(() => {
@@ -21,12 +22,15 @@ export const GeolocationContainer = () => {
       preventSuspend: true,
       heartbeatInterval: 30, // <-- every minute
       stopOnTerminate: false,
+      deferTime: 1,
       debug: true,
       logLevel: BackgroundGeolocation.LOG_LEVEL_VERBOSE,
     }).then(state => {
       setGeoReady(true)
       console.log(state)
-      BackgroundGeolocation.start()
+      BackgroundGeolocation.start().then(() => {
+        setIsLogging(true)
+      })
 
       setSubscription(prev => [
         ...prev,
@@ -65,6 +69,13 @@ export const GeolocationContainer = () => {
           },
         ),
       ])
+      setSubscription(prev => [
+        ...prev,
+        BackgroundGeolocation.onEnabledChange(isEnabled => {
+          console.log('[onEnabledChange]', isEnabled)
+          setGeoEnabled(isEnabled)
+        }),
+      ])
     })
     return () => {
       BackgroundGeolocation.stop()
@@ -72,5 +83,26 @@ export const GeolocationContainer = () => {
     }
   }, [])
 
-  return <MapWrapper coords={location.coords} footprint={footprint} />
+  const handleStart = () => {
+    BackgroundGeolocation.start().then(state => {
+      setIsLogging(true)
+    })
+  }
+  const handleStop = () => {
+    BackgroundGeolocation.stop().then(state => {
+      setIsLogging(false)
+    })
+  }
+
+  return (
+    <MapWrapper
+      geoReady={geoReady}
+      geoEnabled={geoEnabled}
+      isLogging={isLogging}
+      coords={location.coords}
+      footprint={footprint}
+      handleStart={handleStart}
+      handleStop={handleStop}
+    />
+  )
 }
