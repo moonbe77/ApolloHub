@@ -1,18 +1,19 @@
 #import "AppDelegate.h"
-
+#import <Firebase.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <TSBackgroundFetch/TSBackgroundFetch.h>
-#import <GoogleMaps/GoogleMaps.h>
-#ifdef FB_SONARKIT_ENABLED
-#import <FlipperKit/FlipperClient.h>
-#import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
-#import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
-#import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
-#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
-#import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
+// #import <GoogleMaps/GoogleMaps.h>
 #import "RNNotifications.h"
+
+#ifdef FB_SONARKIT_ENABLED
+// #import <FlipperKit/FlipperClient.h>
+// #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
+// #import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
+// #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
+#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
+// #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 
 
 static void InitializeFlipper(UIApplication *application) {
@@ -30,11 +31,11 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [GMSServices provideAPIKey:@"_YOUR_API_KEY_"];
+  [FIRApp configure];
   [RNNotifications startMonitorNotifications];
-#ifdef FB_SONARKIT_ENABLED
-  InitializeFlipper(application);
-#endif
+  // #ifdef FB_SONARKIT_ENABLED
+    // InitializeFlipper(application);
+  // #endif?
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge

@@ -10,6 +10,7 @@ import {
   useColorScheme,
   View,
   Button,
+  TextInput,
 } from 'react-native'
 import { theme } from '../theme/styles'
 import CustomButton from '../components/CustomButton'
@@ -61,7 +62,6 @@ const HomeScreen = ({ navigation }: Props): Node => {
   }
   const scrollSectionStyles = { ...styles.scrollSection, ...backgroundStyle }
 
-  console.log('HomeScreen.js:', navigation)
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -72,35 +72,18 @@ const HomeScreen = ({ navigation }: Props): Node => {
         />
 
         <Section title="Header">
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-          </Text>
+          <Text>Config</Text>
+          <View>
+            <TextInput
+              multiline={true}
+              numberOfLines={4}
+              onChangeText={text => console.log(text)}
+              value={'value'}
+              style={{ padding: 10 }}
+            />
+          </View>
         </Section>
       </View>
-      <ScrollView
-        contentInsetAdjustmentBehavior="scrollableAxes"
-        style={scrollSectionStyles}
-      >
-        <Section title="Step 1">
-          Edit <Text style={styles.highlight}>App.js</Text> to change this
-          screen and then come back to see your edits.
-        </Section>
-        <Section title="Step 2">
-          Edit <Text style={styles.highlight}>App.js</Text> to change this
-          screen and then come back to see your edits.
-        </Section>
-        <Section title="Step 3">
-          Edit <Text style={styles.highlight}>App.js</Text> to change this
-          screen and then come back to see your edits.
-        </Section>
-        <Section title="Step 4">
-          Edit <Text style={styles.highlight}>App.js</Text> to change this
-          screen and then come back to see your edits.
-        </Section>
-      </ScrollView>
     </SafeAreaView>
   )
 }

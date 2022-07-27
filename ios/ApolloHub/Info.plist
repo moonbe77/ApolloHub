@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location required to test geolocation app</string>
-	<key>NSLocationUsageDescription</key>
-	<string>We use the location to create a footprint of the ditribution</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>com.transistorsoft.fetch</string>
@@ -47,6 +43,10 @@
 	<string>It is requiered to be able to see yout position in this demo app using rect native and ract-native-maps</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>we nned the location to make this demo app work</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We use the location to create a footprint of the ditribution</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location required to test geolocation app</string>
 	<key>NSMotionUsageDescription</key>
 	<string>We use the motion device to improve the location of the device</string>
 	<key>UIAppFonts</key>

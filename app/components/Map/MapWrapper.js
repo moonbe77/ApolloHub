@@ -21,24 +21,24 @@ export const MapWrapper = ({
   const [follow, setFollow] = React.useState(true)
   const [speed, setSpeed] = React.useState(null)
 
-  useEffect(() => {
-    BackgroundGeolocation.watchPosition(
-      location => {
-        // console.log('[watchPosition] -', location)
-        setSpeed(parseFloat(location.coords.speed * 1.609344).toFixed(2))
-      },
-      errorCode => {
-        console.log('[watchPosition] ERROR -', errorCode)
-      },
-      {
-        interval: 5000,
-        desiredAccuracy: BackgroundGeolocation.DESIRED_ACCURACY_HIGH,
-        persist: false,
-        extras: { foo: 'bar' },
-        timeout: 60000,
-      },
-    )
-  }, [])
+  // useEffect(() => {
+  //   BackgroundGeolocation.watchPosition(
+  //     location => {
+  //       // console.log('[watchPosition] -', location)
+  //       setSpeed(parseFloat(location.coords.speed * 1.609344).toFixed(2))
+  //     },
+  //     errorCode => {
+  //       console.log('[watchPosition] ERROR -', errorCode)
+  //     },
+  //     {
+  //       interval: 5000,
+  //       desiredAccuracy: BackgroundGeolocation.DESIRED_ACCURACY_HIGH,
+  //       persist: false,
+  //       extras: { foo: 'bar' },
+  //       timeout: 60000,
+  //     },
+  //   )
+  // }, [])
 
   return (
     <View style={[styles.wrapper]}>
@@ -53,7 +53,10 @@ export const MapWrapper = ({
           </>
         )}
         <Text> {speed ?? ''} km/h</Text>
-        <Text onPress={() => setFollow(!follow)}> Follow </Text>
+        <Text onPress={() => setFollow(!follow)}>
+          {' '}
+          {follow ? 'Pan' : 'Follow'}{' '}
+        </Text>
       </View>
       <View style={styles.mapContainer}>
         <MapView
