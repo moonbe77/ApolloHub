@@ -27,7 +27,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from './screens/HomeScreen'
 import DetailsScreen from './screens/DetailsScreen'
-import {GeolocationContainer} from './containers/Geolocation'
+import MapScreen from './screens/MapScreen'
 import {theme} from './theme'
 
 import Icon  from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -45,7 +45,7 @@ const App: () => Node = () => {
       notificationsInit()
     }
   }, [])
-console.log(theme)
+
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={navigationRef}>
@@ -74,12 +74,12 @@ console.log(theme)
             name="Details"
             component={DetailsScreen}
             options={{
-              headerShown: false,
+              headerShown: true,
             }}
           />
           <Tab.Screen
             name="Map"
-            component={GeolocationContainer}
+            component={MapScreen}
             options={{              
               headerShown: false,
             }}

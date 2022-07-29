@@ -2,7 +2,7 @@
 import React from 'react'
 import type { Node } from 'react'
 import { StyleSheet, Text, useColorScheme, View } from 'react-native'
-import { theme } from '../theme/styles.js'
+import { theme } from '../theme'
 import CustomButton from '../components/CustomButton'
 import MapView, { Marker } from 'react-native-maps'
 

@@ -2,7 +2,7 @@
 import React from 'react'
 import type { Node } from 'react'
 import { StyleSheet, Text, useColorScheme, View } from 'react-native'
-import { theme } from '../theme/styles.js'
+import { theme } from '../theme'
 import CustomButton from '../components/CustomButton'
 import { Notifications } from 'react-native-notifications'
 type Props = {
@@ -43,7 +43,7 @@ const HomeDetails = ({ navigation }: Props): Node => {
       <CustomButton title="Notification" onPress={handleNotification} />
       <CustomButton
         title="Geo"
-        onPress={() => navigation.navigate('geolocationContainer')}
+        onPress={() => navigation.navigate('Map')}
       />
     </View>
   )

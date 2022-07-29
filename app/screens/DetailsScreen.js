@@ -3,7 +3,7 @@ import React from 'react'
 import type { Node } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StyleSheet, Text, useColorScheme, View } from 'react-native'
-import { theme } from '../theme/styles.js'
+import {theme} from '../theme'
 import CustomButton from '../components/CustomButton'
 import HomeDetails from '../containers/HomeDetails'
 import MapDetails from '../containers/MapDetails'
@@ -69,20 +69,7 @@ const DetailsScreen = ({ navigation }: Props): Node => {
         }}
       />
       <Stack.Screen name="imageView" component={ImageView} />
-      <Stack.Screen
-        name="geolocationContainer"
-        component={GeolocationContainer}
-        options={{
-          title: 'Geolocation',
-          headerStyle: {
-            backgroundColor: mappedTheme.backgroundColor,
-          },
-          headerTintColor: mappedTheme.textColor,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
+   
     </Stack.Navigator>
   )
 }
