@@ -64,9 +64,6 @@ const HomeScreen = ({ navigation }: Props): Node => {
       name: 'John Doe',
       email: 'email@email.com',
     })
-    
-  
-   
   }, [])
   
 
@@ -84,8 +81,7 @@ const HomeScreen = ({ navigation }: Props): Node => {
       throw new Error('This is a test error')
     } catch (error) {
       console.log(error)
-      crashlytics().recordError(error,'This is a test throw error')
-      
+      crashlytics().recordError(error,'This is a test throw error')      
     }
   }
 

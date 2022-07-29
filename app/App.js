@@ -27,7 +27,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from './screens/HomeScreen'
 import DetailsScreen from './screens/DetailsScreen'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import {GeolocationContainer} from './containers/Geolocation'
+import {theme} from './theme'
+
+import Icon  from 'react-native-vector-icons/MaterialCommunityIcons'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 const Stack = createNativeStackNavigator()
@@ -42,7 +45,7 @@ const App: () => Node = () => {
       notificationsInit()
     }
   }, [])
-
+console.log(theme)
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={navigationRef}>
@@ -52,16 +55,18 @@ const App: () => Node = () => {
               let iconName: string
 
               if (route.name === 'Home') {
-                iconName = focused ? 'home' : 'house-siding'
+                iconName = focused ? 'home' : 'home-outline'
               } else if (route.name === 'Details') {
-                iconName = focused ? 'insert-chart' : 'insert-chart-outlined'
+                iconName = focused ? 'door-open' : 'door-closed'
+              }else if (route.name === 'Map') {
+                iconName = focused ? 'map':'map-outline' 
               }
 
               // You can return any component that you like here!
               return <Icon name={iconName} size={size} color={color} />
             },
-            tabBarActiveTintColor: 'tomato',
-            tabBarInactiveTintColor: 'gray',
+            tabBarActiveTintColor: theme.colors.tabBarIconActive,
+            tabBarInactiveTintColor: theme.colors.tabBarIconInactive,
           })}
         >
           <Tab.Screen name="Home" component={HomeScreen} />
@@ -69,7 +74,13 @@ const App: () => Node = () => {
             name="Details"
             component={DetailsScreen}
             options={{
-              tabBarBadge: badge,
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="Map"
+            component={GeolocationContainer}
+            options={{              
               headerShown: false,
             }}
           />

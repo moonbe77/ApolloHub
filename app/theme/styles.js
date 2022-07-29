@@ -1,3 +1,5 @@
+import {colors} from './index'
+
 export const theme = {
   light: {
     backgroundColor: '#fff',
@@ -8,9 +10,8 @@ export const theme = {
     backgroundColor: '#222',
     color: '#fff',
     textColor: 'gray',
-  },
-  colors: {
-    primary: '#000',
-    secondary: '#fff',
-  },
+  },  
+  colors:{
+    ...colors,
+  }
 }
