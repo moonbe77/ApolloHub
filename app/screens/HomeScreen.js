@@ -1,6 +1,7 @@
 // @flow
-import React from 'react'
+import React, {useEffect} from 'react'
 import type { Node } from 'react'
+import crashlytics from '@react-native-firebase/crashlytics'
 import {
   SafeAreaView,
   ScrollView,
@@ -57,10 +58,36 @@ const HomeScreen = ({ navigation }: Props): Node => {
   const isDarkMode = useColorScheme() === 'dark'
   const mappedTheme = isDarkMode ? theme.dark : theme.light
 
+  useEffect(() => {
+    crashlytics().setUserId('12345')
+    crashlytics().setAttributes({
+      name: 'John Doe',
+      email: 'email@email.com',
+    })
+    
+  
+   
+  }, [])
+  
+
   const backgroundStyle = {
     backgroundColor: mappedTheme.backgroundColor,
   }
   const scrollSectionStyles = { ...styles.scrollSection, ...backgroundStyle }
+
+  const handleCrash = () => {
+    crashlytics().log('Home Screen Crash')
+    crashlytics().crash()
+  }
+  const logReport = () => {
+    try {
+      throw new Error('This is a test error')
+    } catch (error) {
+      console.log(error)
+      crashlytics().recordError(error,'This is a test throw error')
+      
+    }
+  }
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -70,6 +97,8 @@ const HomeScreen = ({ navigation }: Props): Node => {
           title="Go to Details"
           onPress={() => navigation.navigate('Details')}
         />
+        <CustomButton title="Test Crash" onPress={handleCrash} />
+        <CustomButton title="Test Log report" onPress={logReport} />
 
         <Section title="Header">
           <Text>Config</Text>
