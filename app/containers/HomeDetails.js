@@ -24,6 +24,19 @@ const HomeDetails = ({ navigation }: Props): Node => {
     })
   }
 
+  const handleCrash = () => {
+    crashlytics().log('Home Screen Crash')
+    crashlytics().crash()
+  }
+  const logReport = () => {
+    try {
+      throw new Error('This is a test error')
+    } catch (error) {
+      console.log(error)
+      crashlytics().recordError(error,'This is a test throw error')      
+    }
+  }
+
   return (
     <View style={[styles.wrapper, backgroundStyle]}>
       <Text style={styles.text}>Details</Text>

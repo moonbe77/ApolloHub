@@ -5,15 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StyleSheet, Text, useColorScheme, View } from 'react-native'
 import {theme} from '../theme'
 import CustomButton from '../components/CustomButton'
-import HomeDetails from '../containers/HomeDetails'
-import MapDetails from '../containers/MapDetails'
-import ContactDetails from '../containers/ContactDetails'
-import ImageView from '../containers/ImageView'
-import { GeolocationContainer } from '../containers/Geolocation'
-
-type Props = {
-  navigation: Object,
-}
 
 const Stack = createNativeStackNavigator()
 const DetailsScreen = ({ navigation }: Props): Node => {
@@ -25,52 +16,12 @@ const DetailsScreen = ({ navigation }: Props): Node => {
   }
 
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="HomeDetails"
-        component={HomeDetails}
-        options={{
-          title: 'Details',
-          headerStyle: {
-            backgroundColor: mappedTheme.backgroundColor,
-          },
-          headerTintColor: mappedTheme.textColor,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-      <Stack.Screen
-        name="MapDetails"
-        component={MapDetails}
-        options={{
-          title: 'Map',
-          headerStyle: {
-            backgroundColor: mappedTheme.backgroundColor,
-          },
-          headerTintColor: mappedTheme.textColor,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-      <Stack.Screen
-        name="ContactDetails"
-        component={ContactDetails}
-        options={{
-          title: 'Contact',
-          headerStyle: {
-            backgroundColor: mappedTheme.backgroundColor,
-          },
-          headerTintColor: mappedTheme.textColor,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-      <Stack.Screen name="imageView" component={ImageView} />
-   
-    </Stack.Navigator>
+  <View>
+    <Text>DetailsScreen to show speed, altitude, etc</Text>
+    <Text>STOP START BUTTONS</Text>
+    <Text>UPLOAD TO DB</Text>
+    <Text>SHOW ON MAP</Text>
+    </View>
   )
 }
 

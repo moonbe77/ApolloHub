@@ -1,11 +1,11 @@
-import { colors } from './colors'
+import { colors, Colors } from './colors'
 
 interface StyleObject {
   [key: string]: string
 }
 
 interface ITheme {
-  colors: StyleObject
+  colors: Colors
   light: StyleObject
   dark: StyleObject
 }
@@ -14,12 +14,12 @@ export const theme: ITheme = {
   light: {
     backgroundColor: '#fff',
     color: '#000',
-    textColor: 'green',
+    textColor: colors.textLight,
   },
   dark: {
     backgroundColor: '#222',
     color: '#fff',
-    textColor: 'gray',
+    textColor: colors.textDark,
   },
   colors: {
     ...colors,
