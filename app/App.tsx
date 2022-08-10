@@ -1,6 +1,8 @@
+import 'react-native-gesture-handler';
 import React from 'react'
 import { useEffect } from 'react'
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -10,11 +12,12 @@ import {
   View,
 } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
+import { CustomDrawerContent } from './components/Drawer/Drawer';
 import { navigationRef } from './RootNavigation'
 
 // import { init as notificationsInit } from './services/notifications'
 import { Notifications } from 'react-native-notifications'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createDrawerNavigator, DrawerNavigationProp } from '@react-navigation/drawer'
 
 import HomeScreen from './screens/HomeScreen'
 
@@ -23,73 +26,51 @@ import { theme } from './theme'
 
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
-const Stack = createNativeStackNavigator()
+export type RootDrawerParamList = {
+  home: undefined;
+  settings: { sort: 'latest' | 'top' } | undefined;
+  // Profile: { userId: string };
+};
+const Drawer = createDrawerNavigator<RootDrawerParamList>()
 
 const App = () => {
-
-  // useEffect(() => {
-  //   if (typeof notificationsInit === 'function') {
-  //     console.log('initNotifications is a function')
-  //     notificationsInit()
-  //   }
-  // }, [])
-
 
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={navigationRef}>
-        <Stack.Navigator> 
-        <Stack.Screen
+        <Drawer.Navigator 
+        // useLegacyImplementation
+        initialRouteName='home'
+        drawerContent = {(props)=> <CustomDrawerContent  {...props}/>
+        }
+        > 
+        <Drawer.Screen
           name="home"
           component={HomeScreen}
           options={{
-            headerShown: false,            
+            headerShown: true,    
+            // headerLeft: () => <Button
+            // title='drawer'
+             
+            //   >
+
+            //   </Button>
+                      
           }}
         />     
-        <Stack.Screen
+        <Drawer.Screen
           name="settings"
           component={SettingsScreen}
           options={{
-            headerShown: true,   
-            headerBackButtonMenuEnabled: true,
-            headerBackTitle: 'Back',
+            headerShown: true,
+            // headerBackTitle: 'Back',
           }}
         />  
-        {/* <Stack.Screen
-          name="settings"
-          component={SettingsScreen}
-          options={{
-            headerShown: true,            
-          }}
-        /> */}
-        </Stack.Navigator>
+  
+        </Drawer.Navigator>
       </NavigationContainer>    
     </SafeAreaProvider>
   )
 }
-
-const styles = StyleSheet.create({
-  scrollSection: {
-    minHeight: '100%',
-    backgroundColor: '#777',
-  },
-  sectionContainer: {
-    marginTop: 18,
-    paddingHorizontal: 24,
-    paddingVertical: 10,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-})
 
 export default App

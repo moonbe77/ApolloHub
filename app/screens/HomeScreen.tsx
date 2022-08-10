@@ -1,97 +1,81 @@
-import React, {useEffect} from 'react'
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Button,
-  TextInput,
-} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeDetails from '../containers/HomeDetails'
-import DetailsScreen from './DetailsScreen'
-import MapScreen from './MapScreen'
-import {theme} from '../theme'
+// @flow
+import React from 'react'
+import { StyleSheet, Text, useColorScheme, View, Button } from 'react-native'
+import { theme } from '../theme'
+import CustomButton from '../components/CustomButton'
+import crashlytics from '@react-native-firebase/crashlytics'
+import { Notifications } from 'react-native-notifications'
+import {DrawerNavigationProp} from '@react-navigation/drawer'
+import {RootDrawerParamList} from '../App'
+type Props = {
+  navigation: DrawerNavigationProp<RootDrawerParamList,'home'>
+}
 
-const Tab = createBottomTabNavigator()
+const HomeScreen = ({ navigation }: Props) => {
+  const isDarkMode = useColorScheme() === 'dark'
+  const mappedTheme = isDarkMode ? theme.dark : theme.light
 
-const HomeScreen = () => {
+  const backgroundStyle = {
+    backgroundColor: mappedTheme.backgroundColor,
+  }
+  const handleNotification = () => {
+    Notifications.postLocalNotification({
+      payload: {
+        body: 'Local notification!',
+        title: 'Local Notification Title',
+      },
+      body: 'body',
+      title: 'title',
+      identifier: '1234',
+      sound: 'default',
+      badge: 1,
+      type: '1',
+      thread: 'test',
+    })
+  }
+
+  const handleCrash = () => {
+    crashlytics().log('Home Screen Crash')
+    crashlytics().crash()
+  }
+
+  const logReport = () => {
+    try {
+      throw new Error('This is a test error')
+    } catch (error) {
+      console.log(error)
+      crashlytics().recordError(error as Error, 'This is a test throw error')
+    }
+  }
+
   return (
-    <Tab.Navigator
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-              let iconName = ''
-              if (route.name === 'homeFeed') {
-                iconName = focused ? 'home' : 'home-outline'
-              } else if (route.name === 'details') {
-                iconName = focused ? 'door-open' : 'door-closed'
-              } else if (route.name === 'map') {
-                iconName = focused ? 'map' : 'map-outline'
-              }
-              // You can return any component that you like here!
-              return <Icon name={iconName} size={size} color={color} />
-            },
-            tabBarActiveTintColor: theme.colors.tabBarIconActive,
-            tabBarInactiveTintColor: theme.colors.tabBarIconInactive,
-          })}
-        >
-          <Tab.Screen
-            name="homeFeed"
-            component={HomeDetails}
-            options={{
-              tabBarLabel: 'Home',
-              headerShown: false,
-            }}
-          />
-          <Tab.Screen
-            name="details"
-            component={DetailsScreen}
-            options={{
-              tabBarLabel: 'Details',
-              headerShown: true,
-            }}
-          />
-          <Tab.Screen
-            name="map"
-            component={MapScreen}
-            options={{
-              tabBarLabel: 'Map',
-              headerShown: false,
-            }}
-          />
-        </Tab.Navigator>
+    <View style={[styles.wrapper]}>
+      <Text style={styles.text}>HOME SCREEN</Text>
+      <CustomButton onPress={handleNotification} title="notif" />
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          onPress={() => navigation.navigate('settings', { sort: 'latest' })}
+          title="Go settings"/>
+        
+         <Button
+          onPress={() => navigation.openDrawer()}
+          title="toggle drawer"
+        />
+      </View>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
-  scrollSection: {
+  wrapper: {
     minHeight: '100%',
-    backgroundColor: '#777',
+    backgroundColor: '#770007',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  sectionContainer: {
-    marginTop: 18,
-    paddingHorizontal: 24,
-    paddingVertical: 10,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  button: {
-    marginTop: 20,
-    backgroundColor: '#fff',
+  text: {
+    color: '#fff',
+    fontSize: 30,
   },
 })
 

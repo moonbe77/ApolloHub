@@ -2,12 +2,10 @@ export interface Colors {
   tabBarIconActive: string
   tabBarIconInactive: string
   background: string
+  background2: string
   primary: string
   secondary: string
   text: string
-  textInverse: string
-  textLight: string
-  textDark: string
   textDisabled: string
   textHint: string
   textInfo: string
