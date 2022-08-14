@@ -93,6 +93,14 @@ export const GeolocationContainer = () => {
       setIsLogging(false)
     })
   }
+  const getLog = () => {
+
+    BackgroundGeolocation.logger.getLog().then(log => {
+      console.log('[getLog]', log)
+    }).catch(error => {
+      console.log('[getLog] ERROR:', error)
+    })
+  }
 
   return (
     <MapWrapper
@@ -103,6 +111,7 @@ export const GeolocationContainer = () => {
       footprint={footprint}
       handleStart={handleStart}
       handleStop={handleStop}
+      getLog={getLog}
     />
   )
 }

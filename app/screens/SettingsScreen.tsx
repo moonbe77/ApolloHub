@@ -1,23 +1,20 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-import {DrawerNavigationProp} from '@react-navigation/drawer'
-import {RootDrawerParamList} from '../App'
+import { DrawerNavigationProp } from '@react-navigation/drawer'
+import { RootDrawerParamList } from '../router/drawer'
 
 type Props = {
-  navigation: DrawerNavigationProp<RootDrawerParamList,'home'>
+  navigation: DrawerNavigationProp<RootDrawerParamList, 'home'>
 }
-const SettingsScreen = (props : Props)=> {
+const SettingsScreen = (props: Props) => {
   console.log(props)
   return (
     <View>
-      <Text>
-        SettingsScreen
-      </Text>
-      <Button title='toggle' onPress={props.navigation.toggleDrawer}/>
-      <Button title='back' onPress={props.navigation.goBack}/>
+      <Text>SettingsScreen</Text>
+      <Button title="toggle" onPress={props.navigation.toggleDrawer} />
+      <Button title="back" onPress={props.navigation.goBack} />
     </View>
-    
   )
 }
 
-export default SettingsScreen
+export { SettingsScreen }
